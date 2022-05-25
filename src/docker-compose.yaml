@@ -1,14 +1,14 @@
-version: '3'
+version: '3.3'
 services:
-  my_little_proxy:
+  proxy_server:
     image: nginx:latest
-    container_name: little_server
+    container_name: proxy_server
     ports:
       - 80:8080
     depends_on:
-      - my_little_server
+      - miniserver
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
-  my_little_server:
-    image: obraz:96.00
-    container_name: my_little_server
+  miniserver:
+    image: mydocker:my
+    container_name: miniserver
